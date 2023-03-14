@@ -1,0 +1,237 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  font-size: 62.5%;
+
+  /*Variáveis Global*/
+  --ff--Staatliches:  'Staatliches', sans-serif;
+  --ff--Palanquin: 'Palanquin', sans-serif;
+
+  --tf--scale: transform: scale(1.5rem);
+}
+body{
+  width: 100%;
+  height: 199.5rem;
+
+  font-family: var(--ff--Staatliches);
+  background: #EFF1FF;
+}
+
+header{
+  width: 100%;
+  height: 27.9rem;
+
+  padding-top: 3.2rem;
+  background: #8E9AAF;
+}
+header img{
+  width: 13.7rem;
+  height: 13.7rem;
+
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 200ms;
+  transition-duration: 700ms;
+}
+header::before{
+  position: absolute;
+ 
+  z-index: 0;
+  content: 'SPACE CREAM';
+
+  width: 100%;
+  height: 4.9rem;
+  left: 0px;
+  top: 201px;
+
+  background: #CBC0D3;
+
+  font-family: 'Staatliches', cursive;
+  font-weight: 400;
+  font-size: 4rem;
+  line-height: 3.4rem;
+  
+  letter-spacing: 0.05em;
+  
+  color: #FFFFFF;
+  
+  text-shadow: 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.25);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main{
+  width: 32rem;
+  height: 164.2rem;
+
+  margin: 1.4rem auto 6rem;
+}
+h2{
+  font-family: var(--ff--Palanquin);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 1.5rem;
+  
+  margin-bottom: 6.3rem;
+
+  display: flex;
+  align-items: center;
+  text-align: center;
+
+  color: #23053A;
+}
+.cards{
+  position: relative;
+  
+}
+.cards p{
+  position: absolute;
+
+  z-index: 3;
+
+  left: 19.2rem;
+  top: 1.7rem;
+
+  width: 11.2rem;
+  height: 3.5rem;
+
+  background: #FEEAFA;
+  border-radius: 2rem;
+
+  font-family: var(--ff--Staatliches);
+  font-weight: 400;
+  font-size: 2rem;
+  line-height: 3.4rem;
+
+
+  color: #4A4E69;
+  letter-spacing: 0.05em;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cards img{
+  margin-bottom: 3.2rem;
+}
+header img:hover{
+  transform: scale(1.2);
+
+}
+
+.cards img{
+  animation-name: downtop;
+  animation-duration: 2000ms;
+}
+
+.cards img:hover{
+  transform: scale(1.1);
+}
+
+.cards p{
+  animation-name: topdown;
+  animation-duration: 2000ms;
+
+  font-family: var(--ff--Staatliches);
+}
+
+
+/*Animação*/
+
+@keyframes topdown{
+  0%{
+    opacity: 0;
+    transform: translateY(-3.5rem);
+  }
+  50%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0rem);
+
+  }
+}
+@keyframes downtop{
+  0%{
+    opacity: 0;
+    transform: translateY(-5.1rem);
+  }
+  100%{
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (min-width: 900px){
+  header{
+    width: 40.7rem;
+    height: 100.0rem;
+    }
+
+  header::before{
+    width: 40.7rem;
+    height: 7.0rem;
+  }
+
+  .cards{
+    height: 24rem;
+  }
+
+  h2{
+    position: absolute;
+    font-weight: 400;
+    font-size: 2.4rem;
+    line-height: 2.0rem;
+    width: 26.5rem;
+
+    top: 32.7rem;
+    left: 7.2rem;
+  }
+
+  main{
+    display: grid;
+    position: absolute;
+    top: 0rem
+    
+  }
+
+  main{
+    grid-template-areas:
+    "A B C"
+    "D B F"
+    "D E F"
+    
+  }
+  main div:nth-child(1) {
+    grid-area: A;
+  }
+
+  main div:nth-child(2) {
+    grid-area: B;
+  }
+
+  main div:nth-child(3) {
+    grid-area: C;
+  }
+
+  main :nth-child(4) {
+    grid-area: D;
+  }
+
+  main :nth-child(5) {
+    grid-area: E;
+  }
+
+  main :nth-child(6) {
+    grid-area: F;
+  }
+  
+}
